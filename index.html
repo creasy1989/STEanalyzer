@@ -3,145 +3,205 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="sql.js"></script>
-
     <link href="site.css" rel="stylesheet">
 </head>
-
 <body>
     <table border="1px">
         <tr>
-            <td>
-                Настройки
+            <td valign="top" rowspan="3">
+                Работа с одной вещью
+            <br>
+                <input type="radio" name="games" value="Steam">
+                Steam<br>
+                <input type="radio" name="games" value="dota">
+                Dota 2<br>
+                <input type="radio" checked name="games" value="cs">
+                Counter strike<br>
+                <input type="radio" name="games" value="PLAYERUNKNOWNS BATTLEGROUNDS">
+                PLAYERUNKNOWN'S BATTLEGROUNDS<br>
+                <input type="radio" name="games" value="Rust">
+                Rust<br>
+                <input type="radio" name="games" value="Team Fortress 2">
+                Team Fortress 2<br>
+                <input type="radio" name="games" value="Unturned">
+                Unturned<br>
+                <input type="radio" name="games" value="PAYDAY 2">
+                PAYDAY 2<br>
+                <input type="radio" name="games" value="Dont Starve Together">
+                Don't Starve Together<br>
+                <input type="radio" name="games" value="KillingFloor2">
+                Killing Floor 2<br>
+                <input type="radio" name="games" value="Z1 Battle Royale">
+                Z1 Battle Royale<br>
+                <input type="radio" name="games" value="Black Squad">
+                Black Squad<br>
+                <input type="radio" name="games" value="Artifact">
+                Artifact<br>
+                <input type="radio" name="games" value="Primal Carnage: Extinction">
+                Primal Carnage: Extinction<br>
             </td>
             <td>
-                Среднее количество продаж в день за месяц не меньше <input class="settings" type="text" size=4
-                    name="minCountSalesDay">
-                <br> Желаемый процент профита <input class="settings" type="text" size=1 name="profitPercent">
-                <br> Задержка между запросами <input class="settings" type="text" size=1 name="delayMs">
-                <br> Анализировать дней <input class="settings" type="text" size=1 name="countDayHistoryGraph">
-                <br> Количество продаж в час <input class="settings" type="text" size=1 name="countSalesHour">
-                <br> Процент коридора <input class="settings" type="text" size=1 name="percentLimit">
-                <br> <input class="settings" type="checkbox" name="loadOnlyOnWork" value="a2" checked>Загружать только
+                Настройки:
+            <br>
+                Желаемый процент профита <input class="settings" type="text" size=1 name="profitPercent">
+                <br>
+                Задержка между запросами <input class="settings" type="text" size=1 name="delayMs">
+                <br>
+                Период анализа
+                <input class="settings" type="radio" checked name="countDayHistoryGraph">
+                Неделя
+                <input class="settings" type="radio" name="countDayHistoryGraph">
+                Месяц<br>
+                Минимум продаж в час <input class="settings" type="text" size=1 name="countSalesHour">
+                <br>
+                Процент коридора <input class="settings" type="text" size=1 name="percentLimit">
+                <br>
+                <input class="settings" type="checkbox" name="loadOnlyOnWork" value="a2" checked>Загружать только
                 включенные в
-                работу
+                работу  
+            
             </td>
             <td rowspan="6" valign="top">
                 <div id="log" class="overflow"></div>
                 <br>
-                <input class="settings" type="radio" checked name="algorithm">High garant<br>
-                <input class="settings" type="radio" name="algorithm">High safe garant<br>
-                <input class="settings" type="radio" name="algorithm">Avg garant<br>
-                <input class="settings" type="radio" name="algorithm">Low garant<br>
+                <input class="settings" type="radio" checked name="algorithm">
+                High garant<br>
+                <input class="settings" type="radio" name="algorithm">
+                High safe garant<br>
+                <input class="settings" type="radio" name="algorithm">
+                Avg garant<br>
+                <input class="settings" type="radio" name="algorithm">
+                Low garant<br>
                 <input class="settings" type="radio" name="algorithm">Buy garant
+            
             </td>
         </tr>
-        <td rowspan="2">
-            Работа с одной вещью
-            <br>
-            <input type="radio" checked name="games" value="cs">Counter strike<br>
-            <input type="radio" name="games" value="dota">Dota 2<br>
-        </td>
         <td>
             Наименование <input class="settings" type="text" size=40 name="marketName">
             <br>
             <button id="get_info">Загрузить данные</button>
-
-
             <button id="calculateOneServer">Рассчитать</button>
             <button id="drawPriceGraph">График</button>
             <button id="drawPriceGraphFilter">ГрафикФильтр</button>
         </td>
-        </tr>
-        <tr>
-            <td>
-                <div id="xlop"></div>
-            </td>
-        </tr>
-        <tr>
-            <td rowspan="3">
-                Работа с базой STH
+</tr>
+<tr>
+    <td>
+        <div id="xlop"></div>
+    </td>
+</tr>
+<tr>
+    <td valign="top" rowspan="3">
+        Работа с базой STH
                 <br>
-                <br>
-                <button id="deleteRow">Удалить отмеченные</button>
-            </td>
-            <td>
-                Файл <input class="settings" type="text" size=1 name="importFile">
-                <button id="importFromFile">Импорт из файла</button>
-                <br>
-                База <input class="settings" type="text" size=1 name="fileName">
-                <button id="get_infoFromFile">Загрузить базу из STH</button>
-                <button id="loadSteam">Загрузить данные Steam</button>
-            </td>
-        <tr>
-            <td>
-                <button id="calculateServer">Рассчитать</button>
-                <button id="saveToFile">Сохранить в базу STH</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div id="dataTable">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <div id="sellGraph">
-                </div>
-            </td>
-            <td>
-                <div id="sellGraphSettings" hidden="true">
-                    <table>
-                        <tr>
-                            <td>Алгоритм</td>
-                            <td>buy</td>
-                            <td>sell</td>
-                        </tr>
-                        <tr>
-                            <td>High garant</td>
-                            <td><input type="checkbox" id="highBuy" checked></td>
-                            <td><input type="checkbox" id="highSell" checked></td>
-                            <td><svg width="20" height="10">
-                                    <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="orange" /></svg>
-                            <td>
-                        </tr>
-                        <tr>
-                            <td>High safe garant</td>
-                            <td><input type="checkbox" id="high2Buy" checked></td>
-                            <td><input type="checkbox" id="high2Sell" checked></td>
-                            <td><svg width="20" height="10">
-                                    <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="blue" /></svg>
-                            <td>
-                        </tr>
-                        <tr>
-                            <td>Avg garant</td>
-                            <td><input type="checkbox" id="avgBuy" checked></td>
-                            <td><input type="checkbox" id="avgSell" checked></td>
-                            <td><svg width="20" height="10">
-                                    <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="red" /></svg>
-                            <td>
-                        </tr>
-                        <tr>
-                            <td>Low garant</td>
-                            <td><input type="checkbox" id="lowBuy" checked></td>
-                            <td><input type="checkbox" id="lowSell" checked></td>
-                            <td><svg width="20" height="10">
-                                    <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="purple" /></svg>
-                            <td>
-                        </tr>
-                        <tr>
-                            <td>Buy garant </td>
-                            <td><input type="checkbox" id="buyBuy" checked></td>
-                            <td><input type="checkbox" id="buySell" checked></td>
-                            <td><svg width="20" height="10">
-                                    <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="lightblue" /></svg>
-                            <td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-    </table>
-    </div>
-</body>
+        <br>
+        <button id="deleteRow">Удалить отмеченные</button>
+    </td>
+    <td>
+        Файл <input class="settings" type="text" size=1 name="importFile">
+        <button id="importFromFile">Импорт из файла</button>
+        <br>
+        <br>
+        База <input class="settings" type="text" size=1 name="fileName">
+        <button id="get_infoFromFile">Загрузить базу из STH</button>
+        <button id="loadSteam">Загрузить данные Steam</button>
+    </td>
+<tr>
+    <td>
+        <button id="calculateServer">Рассчитать</button>
+        <button id="saveToFile">Сохранить в базу STH</button>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div id="dataTable"></div>
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <div id="sellGraph"></div>
+    </td>
+    <td>
+        <div id="sellGraphSettings" hidden="true">
+            <table>
+                <tr>
+                    <td>Алгоритм</td>
+                    <td>buy</td>
+                    <td>sell</td>
+                </tr>
+                <tr>
+                    <td>High garant</td>
+                    <td>
+                        <input type="checkbox" id="highBuy" checked>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="highSell" checked>
+                    </td>
+                    <td>
+                        <svg width="20" height="10">
+                            <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="orange"/>
+                        </svg>
+                    <td>
+                </tr>
+                <tr>
+                    <td>High safe garant</td>
+                    <td>
+                        <input type="checkbox" id="high2Buy" checked>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="high2Sell" checked>
+                    </td>
+                    <td>
+                        <svg width="20" height="10">
+                            <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="blue"/>
+                        </svg>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Avg garant</td>
+                    <td>
+                        <input type="checkbox" id="avgBuy" checked>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="avgSell" checked>
+                    </td>
+                    <td>
+                        <svg width="20" height="10">
+                            <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="red"/>
+                        </svg>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Low garant</td>
+                    <td>
+                        <input type="checkbox" id="lowBuy" checked>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lowSell" checked>
+                    </td>
+                    <td>
+                        <svg width="20" height="10">
+                            <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="purple"/>
+                        </svg>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Buy garant </td>
+                    <td>
+                        <input type="checkbox" id="buyBuy" checked>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="buySell" checked>
+                    </td>
+                    <td>
+                        <svg width="20" height="10">
+                            <line x1="0" y1="5" x2="20" y2="5" pathLength="0" stroke="lightblue"/>
+                        </svg>
+                    <td>
+                </tr>
+            </table>
+        </div>
+    </td>
+</tr>
+</table></div></body>
