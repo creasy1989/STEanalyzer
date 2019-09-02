@@ -7,7 +7,7 @@
     "manifest_version": 2,
     "name": "STEanalyzer",
     "description": "Анализатор",
-    "version": "1.6",
+    "version": "1.8",
     "icons": {
       "16": "ico/favicon-16x16.png",
 	  "96": "ico/favicon-96x96.png",

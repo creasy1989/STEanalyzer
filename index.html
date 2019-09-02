@@ -43,25 +43,24 @@
             <td>
                 Настройки:
             <br>
-                Желаемый процент профита <input class="settings" type="text" size=1 name="profitPercent">
+                Желаемый процент профита <input class="settings" type="number" size=1 name="profitPercent">
                 <br>
-                Задержка между запросами <input class="settings" type="text" size=1 name="delayMs">
+                Задержка между запросами (миллисекунд)<input class="settings" type="number" size=1 name="delayMs">
                 <br>
                 Период анализа
                 <input class="settings" type="radio" checked name="countDayHistoryGraph">
                 Неделя
                 <input class="settings" type="radio" name="countDayHistoryGraph">
                 Месяц<br>
-                Минимум продаж в час <input class="settings" type="text" size=1 name="countSalesHour">
+                Минимум продаж в час <input class="settings" type="number" size=1 name="countSalesHour">
                 <br>
-                Процент коридора <input class="settings" type="text" size=1 name="percentLimit">
+                Процент коридора <input class="settings" type="number" size=1 name="percentLimit">
                 <br>
                 <input class="settings" type="checkbox" name="loadOnlyOnWork" value="a2" checked>Загружать только
                 включенные в
-                работу  
-            
+                работу
             </td>
-            <td rowspan="6" valign="top">
+            <td rowspan="5" valign="top">
                 <div id="log" class="overflow"></div>
                 <br>
                 <input class="settings" type="radio" checked name="algorithm">
@@ -72,8 +71,8 @@
                 Avg garant<br>
                 <input class="settings" type="radio" name="algorithm">
                 Low garant<br>
-                <input class="settings" type="radio" name="algorithm">Buy garant
-            
+                <input class="settings" type="radio" name="algorithm">
+                Buy garant
             </td>
         </tr>
         <td>
@@ -98,27 +97,34 @@
         <button id="deleteRow">Удалить отмеченные</button>
     </td>
     <td>
-        Файл <input class="settings" type="text" size=1 name="importFile">
-        <button id="importFromFile">Импорт из файла</button>
-        <br>
-        <br>
-        База <input class="settings" type="text" size=1 name="fileName">
-        <button id="get_infoFromFile">Загрузить базу из STH</button>
+        <table>
+            <tr>
+                <td>
+                    База расширения (sql) <input class="settings" type="text" size=1 name="fileName">
+                </td>
+                <td>
+                    Файл с предметами (txt) <input class="settings" type="text" size=5 name="importFile">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="get_infoFromFile">Загрузить базу</button>
+                </td>
+                <td>
+                    <button id="importFromFile">Импорт из файла</button>
+                </td>
+            </tr>
+        </table>
         <button id="loadSteam">Загрузить данные Steam</button>
-    </td>
-<tr>
-    <td>
         <button id="calculateServer">Рассчитать</button>
         <button id="saveToFile">Сохранить в базу STH</button>
     </td>
-</tr>
 <tr>
     <td>
         <div id="dataTable"></div>
     </td>
 </tr>
 <tr>
-    <td></td>
     <td>
         <div id="sellGraph"></div>
     </td>
