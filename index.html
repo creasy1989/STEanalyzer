@@ -1,11 +1,30 @@
 <head>
     <meta charset="utf-8">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="sql.js"></script>
     <link href="site.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <title>STEanalyzer</title>
 </head>
 <body>
+    <div class="wrapper">
+        <header>
+            <div class="inner">
+                <a class="logo">STEanalyzer</a>
+
+                <ul class="socials">
+                    <li class="vk">
+                        <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+        <div class="inner">
+
     <table border="1px">
         <tr>
             <td valign="top" rowspan="3">
@@ -40,25 +59,33 @@
                 <input type="radio" name="games" value="Primal Carnage: Extinction">
                 Primal Carnage: Extinction<br>
             </td>
-            <td>
-                Настройки:
-            <br>
-                Желаемый процент профита <input class="settings" type="number" size=1 name="profitPercent">
-                <br>
-                Задержка между запросами (миллисекунд)<input class="settings" type="number" size=1 name="delayMs">
-                <br>
-                Период анализа
-                <input class="settings" type="radio" checked name="countDayHistoryGraph">
+            <td class="block">
+                <div class="row">
+                <div><b>Настройки:</b></div>
+            </div>
+             <div class="row">
+               <div> Желаемый процент профита</div> <input class="settings" type="number" size=1 name="profitPercent">
+            </div> 
+            <div class="row">
+                <div>Минимальный профит</div> <input class="settings" type="number" size=1 name="minProfit">
+                </div> <div class="row">
+                <div>Задержка между запросами (миллисекунд)</div><input class="settings" type="number" size=1 name="delayMs">
+            </div> 
+            <div class="row">
+               <div> Период анализа</div>
+               <div class="min-row"> <input class="settings" type="radio" checked name="countDayHistoryGraph">
                 Неделя
                 <input class="settings" type="radio" name="countDayHistoryGraph">
-                Месяц<br>
-                Минимум продаж в час <input class="settings" type="number" size=1 name="countSalesHour">
-                <br>
-                Процент коридора <input class="settings" type="number" size=1 name="percentLimit">
-                <br>
-                <input class="settings" type="checkbox" name="loadOnlyOnWork" value="a2" checked>Загружать только
-                включенные в
-                работу
+                Месяц
+                </div>
+  </div> 
+  <div class="row">
+                <div>Минимум продаж в час</div> <input class="settings" type="number" size=1 name="countSalesHour">
+                  </div> <div class="row">
+               <div> Процент коридора</div> <input class="settings" type="number" size=1 name="percentLimit">
+                </div>
+                 <div class="row check">
+                <input class="settings" type="checkbox" name="loadOnlyOnWork" value="a2" checked>Загружать только включенные в работу</div></div>
             </td>
             <td rowspan="5" valign="top">
                 <div id="log" class="overflow"></div>
@@ -79,6 +106,7 @@
             Наименование <input class="settings" type="text" size=40 name="marketName">
             <br>
             <button id="get_info">Загрузить данные</button>
+            <button id="calculateOneLocal">РАССЧИТАТЬ ЛОКАЛЬНО</button>
             <button id="calculateOneServer">Рассчитать</button>
             <button id="drawPriceGraph">График</button>
             <button id="drawPriceGraphFilter">ГрафикФильтр</button>
@@ -116,6 +144,7 @@
             </tr>
         </table>
         <button id="loadSteam">Загрузить данные Steam</button>
+        <button id="calculateLocal">РАССЧИТАТЬ ЛОКАЛЬНО</button>
         <button id="calculateServer">Рассчитать</button>
         <button id="saveToFile">Сохранить в базу STH</button>
     </td>
@@ -210,4 +239,7 @@
         </div>
     </td>
 </tr>
-</table></div></body>
+</table></div>
+</div>
+</div>
+</body>
