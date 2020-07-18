@@ -4,7 +4,7 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="sql.js"></script>
-    <link href="site.css" rel="stylesheet">
+     <link href="site.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <title>STEanalyzer</title>
@@ -106,6 +106,7 @@
             Наименование <input class="settings" type="text" size=40 name="marketName">
             <br>
             <button id="get_info">Загрузить данные</button>
+            <button id="calculateOneLocal">РАССЧИТАТЬ ЛОКАЛЬНО</button>
             <button id="calculateOneServer">Рассчитать</button>
             <button id="drawPriceGraph">График</button>
             <button id="drawPriceGraphFilter">ГрафикФильтр</button>
@@ -122,6 +123,8 @@
                 <br>
         <br>
         <button id="deleteRow">Удалить отмеченные</button>
+        <br>
+        <button id="checkItems">Выделить между отмеченных</button>
     </td>
     <td>
         <table>
@@ -143,6 +146,7 @@
             </tr>
         </table>
         <button id="loadSteam">Загрузить данные Steam</button>
+        <button id="calculateLocal">РАССЧИТАТЬ ЛОКАЛЬНО</button>
         <button id="calculateServer">Рассчитать</button>
         <button id="saveToFile">Сохранить в базу STEtrade</button>
     </td>
